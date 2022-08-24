@@ -2,7 +2,10 @@
 
 //   ek type ko as a variable declarae karay aur baad mai usko reuse karay
 
-type varType = number | string | boolean | undefined;
+type varType = number | string | boolean | undefined  |  string[] ;
+
+// or
+// type varType = any;
 
 //  let a: varType = 10;
 //  let b : varType =undefined
@@ -14,11 +17,14 @@ let b: varType;
 let c: varType;
 let d: varType;
 
-let f = prompt("enter yor choice");
+ a= {
+  name:'bisma',
+  age:20
+ }
 
-console.warn(typeof f)
+console.warn(typeof a)
 
-switch (typeof f) {
+switch (typeof  a) {
   case 'number':
     // e='number'
     console.warn("number type");

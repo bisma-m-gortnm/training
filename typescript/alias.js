@@ -1,4 +1,6 @@
 // increase code usability, readability and we can use less  code at multiple places
+// or
+// type varType = any;
 //  let a: varType = 10;
 //  let b : varType =undefined
 //  let c :varType = true
@@ -7,9 +9,12 @@ var a;
 var b;
 var c;
 var d;
-var f = prompt("enter yor choice");
-console.warn(typeof f);
-switch (typeof f) {
+a = {
+    name: 'bisma',
+    age: 20
+};
+console.warn(typeof a);
+switch (typeof a) {
     case 'number':
         // e='number'
         console.warn("number type");
