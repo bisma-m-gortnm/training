@@ -8,3 +8,4 @@ function sum(a:number |string ,b:number| string){
 }
 
 console.log(sum(10,10))
+console.log(sum('bisma','manzoor'))
