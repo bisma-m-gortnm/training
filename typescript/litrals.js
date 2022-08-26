@@ -1,3 +1,4 @@
+"use strict";
 // literal meanx data ko apna type khud daina basically , almost same as unuin
 // let data :'123'|'abc'='123'
 function combo(a, b, type) {

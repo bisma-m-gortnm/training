@@ -9,10 +9,10 @@
 // console.log(sum(10,10))
 
 // method 2
-let a = 10
-let b = 'hi'
+let x = 10
+let y = 'hi'
 
-function sum():string | number {
-    return b
+function sum1():string | number {
+    return y
 }
-console.log(sum())
+console.log(sum1())

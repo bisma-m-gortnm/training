@@ -1,6 +1,7 @@
-var a = "54as";
-console.log(typeof a);
-switch (typeof a) {
+"use strict";
+let j = "54as";
+console.log(typeof j);
+switch (typeof j) {
     case 'number':
         // e='number'
         console.warn("number type");

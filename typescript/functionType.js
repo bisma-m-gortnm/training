@@ -1,3 +1,4 @@
+"use strict";
 // ek function jis type kii value return karta hain wahi uska function type hota hain
 //  if  a fun return numeric value , then that func is numeric type  and so on
 // method 1
@@ -6,9 +7,9 @@
 // }
 // console.log(sum(10,10))
 // method 2
-var a = 10;
-var b = 'hi';
-function sum() {
-    return b;
+let x = 10;
+let y = 'hi';
+function sum1() {
+    return y;
 }
-console.log(sum());
+console.log(sum1());

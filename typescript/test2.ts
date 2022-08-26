@@ -1,11 +1,11 @@
 
-type varType = number | string | boolean | undefined;
+type varType1 = number | string | boolean | undefined;
 
-let a = "54as";
+let j = "54as";
 
-console.log(typeof a)
+console.log(typeof j)
 
-switch (typeof a) {
+switch (typeof j) {
   case 'number':
     // e='number'
     console.warn("number type");

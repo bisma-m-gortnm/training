@@ -1,7 +1,7 @@
 // increase code usability, readability and we can use less  code at multiple places
 
 //   ek type ko as a variable declarae karay aur baad mai usko reuse karay
-
+export{}
 type varType = number | string | boolean | undefined  |  string[] ;
 
 // or
@@ -17,10 +17,10 @@ let b: varType;
 let c: varType;
 let d: varType;
 
- a= {
-  name:'bisma',
-  age:20
- }
+//  a= {
+//   name:'bisma',
+//   age:20
+//  }
 
 console.warn(typeof a)
 

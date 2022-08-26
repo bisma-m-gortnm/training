@@ -1,7 +1,8 @@
-var a = 10;
-var b = "hello";
-var c = undefined;
-function fun() {
-    return c;
-}
-console.log(fun());
+"use strict";
+// let l = 10
+// let m ="hello"
+// let n = undefined
+// function fun1():undefined{
+//     return n
+// }
+// console.log(fun1())

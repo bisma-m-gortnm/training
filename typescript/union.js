@@ -1,3 +1,4 @@
+"use strict";
 // function sum(a:number | string ,b:number | string){
 // //     if(typeof a ==='number' && typeof b === 'number')
 // //     {

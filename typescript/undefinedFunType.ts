@@ -1,8 +1,8 @@
-let a = 10
-let b ="hello"
-let c = undefined
+// let l = 10
+// let m ="hello"
+// let n = undefined
 
-function fun():undefined{
-    return c 
-}
-console.log(fun())
+// function fun1():undefined{
+//     return n
+// }
+// console.log(fun1())
