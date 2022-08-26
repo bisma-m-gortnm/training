@@ -3,14 +3,19 @@ interface Trend {
     cost: number,
     color: string,
     available :boolean,
-    launch : Date
+    launch : Date,
+    comments(): string
 }
 const clothes ={
     title:'shirt',
     cost: 100,
     color:'red',
     available: true,
-    launch : new Date()
+    launch : new Date(),
+    comments(){
+        return  `name ${this.title}`
+    }
+
 
 }
 
