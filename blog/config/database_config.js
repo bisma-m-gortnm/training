@@ -1,0 +1,13 @@
+module.exports={
+    HOST:"localhost",
+    USER:"postgres",
+    PASSWORD:"bisma1234",
+    DB:"Blog_DB",
+    dialect:"postgres",
+    pool:{
+        max:4,
+        min:0,
+        ideal:10000,
+        acquire:30000
+    }
+}
