@@ -1,5 +1,3 @@
-
-const { ROLES } = require('../model')
 const db= require('../model')
 db.ROLES = db.ROLES
 const Admin = db.admin
@@ -13,7 +11,7 @@ checkDuplicateEntity = async (req,res,next)=>{
             }
         })
         if(checkUsername){
-            res.status(400).send({
+            res.status(400).json({
                 message: "Admin of this username is already exists"
             });
             return;
@@ -25,7 +23,7 @@ checkDuplicateEntity = async (req,res,next)=>{
             }
         })
         if(checkEmail){
-            res.status(400).send({
+            res.status(400).json({
                 message:`Failed. Admin of this email is already exists` 
             })
             return;
@@ -37,23 +35,7 @@ checkDuplicateEntity = async (req,res,next)=>{
     }
 }
 
-// checkRole = async (req,res,next) =>{
-//     try {
-//         if(req.body.roles){
-//             for (let i = 0; i < req.body.roles.length; i++) {
-//                if(!ROLES.includes(req.body.roles[i])){
-//                 res.send({message: req.body.roles[i]})
-//                }
-//                 return;
-//             }
-//         }
-//     } catch (error) {
-//         console.log({message:error});
-//     }
-// }
-
  const verifySignUp ={
-    checkDuplicateEntity: checkDuplicateEntity,
-    // checkRole: checkRole
+    checkDuplicateEntity: checkDuplicateEntity
  }
 module.exports = verifySignUp;

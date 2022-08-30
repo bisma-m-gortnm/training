@@ -18,9 +18,11 @@ module.exports = function (app){
     app.post('/signin', auth_controller.signIn)
 
     app.post('/postblog',[authJwt.verifyToken] ,blog_controller.createBlog)  
-   //  app.get('/getblogs', blog_controller.findBlog)  
-    app.put('/edit', [authJwt.verifyToken] , blog_controller.editBlog)
 
-    app.delete('/remove',[authJwt.verifyToken] ,blog_controller.deleteBlog)
+    app.get('/getblogs', blog_controller.findBlog)  
+    
+    app.put('/edit/:id', [authJwt.verifyToken] , blog_controller.editBlog)
+
+    app.delete('/del/:id',[authJwt.verifyToken] ,blog_controller.deleteBlog)
   
 }

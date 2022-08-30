@@ -1,29 +1,31 @@
-const db = require('../model')
-const Admin = db.admin
 const authConfig = require('../config/auth_config')
 const jwt = require("jsonwebtoken")
-const { admin } = require('../model')
 
 verifyToken = async ( req,res,next)=>{
    try { 
     const header = req.headers["authorization"];
+    if(!header){
+        res.send("Token Is Required")
+    }
     const bearerToken = header.split(" ");
-    console.log("header ",header)
     console.log(bearerToken);
     let token = bearerToken[1];
     console.log("token", token);
     if(!token){
-        return res.status(404).send({
+        return res.status(404).json({
             message: "No Token Provided"
         })
     }
      jwt.verify(token,authConfig.secret, (err, decoded)  =>{
         if(err){
-            res.status(401).send({
-                message:"Unauthorized"
+            res.status(401).json({
+                message:"Unauthorized Token"
             })
         }
-        // console.log("decoded",decoded.id)
+        console.log(decoded.id)
+        if(!decoded.id){
+            res.json("Unauthenticated Token")
+        }
         req.adminId = decoded.id;
         next();
    })
@@ -32,45 +34,7 @@ verifyToken = async ( req,res,next)=>{
    }
 };
 
-// verifyToken = async (req,res,next) =>{
-//     const token = req.body.token;
-
-//     if(token){
-//         const decode = jwt.verify(token, authConfig.secret);
-
-//         res.json({
-//             login : true,
-//             data : decode,
-//         });
-//     }
-//     else{
-//         res.json({
-//             login : false,
-//             data : "error"
-//         })
-//     }
-// }
-
-isUser = async (req,res,next) =>{
-    try {
-        const userValid= await Admin.findByPk(req.adminId)
-        const checkRole = admin.getAdmin()
-         for (let i = 0; i < checkRole.length; i++) {
-            if( checkRole[i].name === "admin")
-            next()
-            return;
-         }
-        //  res.status(403).send({
-        //     message: " Require Admin"
-        //  })
-        res.send(userValid)
-    } catch (error) {
-        console.log({ message: error});
-    }
-}
-
 const authJwt = {
-    verifyToken: verifyToken,
-    isUser : isUser
+    verifyToken: verifyToken
 }
 module.exports = authJwt;
